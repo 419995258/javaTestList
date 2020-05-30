@@ -13,23 +13,37 @@ import java.util.concurrent.Executors;
  */
 public class FixedThreadPool {
     public static  void  main(String[] args){
-        ExecutorService threadPool = Executors.newFixedThreadPool(3);
-        for(int i=1; i<=10; i++){
-            final int taskId = i;
-            threadPool.execute(new Runnable(){
-                public void run() {
-                    for(int i=1; i<=10; i++){
-                        System.out.println(Thread.currentThread().getName() + " is looping of " + i + " the task is " + taskId);
+        try {
+            // 创建三个线程
+            ExecutorService threadPool = Executors.newFixedThreadPool(3);
+            for(int i=1; i<=10; i++){
+                threadPool.execute(new Runnable(){
+                    public void run() {
+                            // 线程中执行某些事物
                         try {
-                            Thread.sleep(1000);
+                            System.out.println(Thread.currentThread().getName() + "正在执行xxxx");
+                            Thread.sleep(200);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
+                });
+            }
+            // 关闭线程池
+            threadPool.shutdown();
+
+
+            while (true){
+                if(threadPool.isTerminated()){
+                    System.out.println("线程池已经结束运行");
+                    break;
                 }
-            });
+                Thread.sleep(200);
+            }
+
+            System.out.println("继续执行下面的东西");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        System.out.println("add  all of 10 task");
-        threadPool.shutdown();
     }
 }

@@ -129,6 +129,7 @@ public class celanHtml {
         // 保留换行
         whitelist.addTags("br");
         // 保留h5部分标签
+        whitelist.addTags("input");
         whitelist.addTags("sub");
         whitelist.addTags("sup");
         // 保留图片
