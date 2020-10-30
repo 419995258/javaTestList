@@ -4,6 +4,7 @@ import java.util.zip.CRC32;
 
 public class testCrc {
     public static void main(String[] args) {
+        // 分表处理
         String value = "71033FCAFCB6405D929A56F0863310B5";
         CRC32 crc32 = new CRC32();
         crc32.update(value.getBytes());
