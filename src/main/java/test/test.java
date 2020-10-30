@@ -87,6 +87,7 @@ public class test {
         list.add(-1);
         list.add(2);
         list.add(2);
+        list.add(8);
         List<Integer> newList = list.stream().sorted().collect(Collectors.toList());;
         System.out.println(newList);
 
