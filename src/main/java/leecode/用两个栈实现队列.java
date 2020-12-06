@@ -9,7 +9,7 @@ import java.util.Stack;
  * 链接：https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  *
- * 思路是：
+ * 思路是：1
  * 第一个in栈只添加，还有个栈只有在删除时才使用，如果需要删除，就把in栈全部倒入out栈，然后pop第一个值就是删除头部的数据了
  * https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/solution/mian-shi-ti-09-yong-liang-ge-zhan-shi-xian-dui-l-3/
  *
