@@ -1,4 +1,4 @@
-package leecode;
+package leecode.easy;
 
 public class 左旋转字符串 {
 
