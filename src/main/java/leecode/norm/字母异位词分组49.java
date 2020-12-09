@@ -42,10 +42,14 @@ public class 字母异位词分组49 {
         Map<String,Object> m = new HashMap<>();
         List<String> list = new ArrayList<>();
         for (String str : strs) {
+            // 字符串转换
             char[] c = str.toCharArray();
+            // 排序，从小到大排序
             Arrays.sort(c);
+            // 转换成字符串
             String k = String.valueOf(c);
 
+            // map取值赋值
             if(m.get(k) == null){
                 list = new ArrayList<>();
             }else{
@@ -55,6 +59,7 @@ public class 字母异位词分组49 {
             m.put(k,list);
         }
         System.out.println(m.toString());
+        System.out.println(new ArrayList<>(m.values()));
 
     }
 
