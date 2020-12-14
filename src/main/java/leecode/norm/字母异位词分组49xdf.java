@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import testMap.map;
+
 /**
  * 给定一个字符串数组，将字母异位词组合在一起。字母异位词指字母相同，但排列不同的字符串。
  *
@@ -39,7 +41,7 @@ import java.util.Map;
 public class 字母异位词分组49xdf {
     public static void main(String[] args) {
         String[] strs = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};
-        Map<String,Object> m = new HashMap<>();
+        Map<String,List<String>> m = new HashMap<>();
         List<String> list = new ArrayList<>();
         for (String str : strs) {
             // 字符串转换
@@ -47,7 +49,8 @@ public class 字母异位词分组49xdf {
             // 排序，从小到大排序
             Arrays.sort(c);
             // 转换成字符串
-            String k = String.valueOf(c);
+            String k = c.toString();
+
 
             // map取值赋值
             if(m.get(k) == null){
@@ -59,6 +62,7 @@ public class 字母异位词分组49xdf {
             m.put(k,list);
         }
         System.out.println(m.toString());
+        List<List<String>> l = new ArrayList<List<String>>(m.values());
         System.out.println(new ArrayList<>(m.values()));
 
     }
