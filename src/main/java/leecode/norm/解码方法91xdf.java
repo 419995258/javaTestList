@@ -42,7 +42,7 @@ package leecode.norm;
  * 1 <= s.length <= 100
  * s 只包含数字，并且可能包含前导零。
  *
- * 来源：力扣（LeetCode）
+ * 来源：力扣（LeetCode）1
  * 链接：https://leetcode-cn.com/problems/decode-ways
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
@@ -59,8 +59,9 @@ public class 解码方法91xdf {
      * 1 ms, 在所有 Java 提交中击败了99.96%的用户
      * 内存消耗：
      * 36.6 MB, 在所有 Java 提交中击败了81.65%的用户
-     * @param s
-     * @return
+     *
+     *
+     *
      */
     public static int numDecodings(String s) {
         // 如果为0则肯定为0，或者开头为0
@@ -93,7 +94,6 @@ public class 解码方法91xdf {
                 now = now + val1; // 当前的值是前面的聚合
 
             }
-
             val1 = val2;
             val2 = now;
 
