@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -33,29 +35,8 @@ public class test {
 
 
     public static void main(String[] args){
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(new Date());
-        long whichDay1 = cal.get(Calendar.DAY_OF_YEAR);
-        System.out.println(whichDay1);
-
-        System.out.println(UUID.randomUUID().toString());
-
-        String a = new String("1");
-        String b = new String("1");
-        System.out.println(a == b);
-
-        Integer i = 0;
-
-        Integer aa = i++;
-        System.out.println(aa);
-        Integer bb = ++i;
-        System.out.println(bb);
-
-        System.out.println("1".hashCode());
-
-        CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList();
-        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-
+        String[] str = "1-story".split("-");
+        System.out.println("");
     }
 
 
