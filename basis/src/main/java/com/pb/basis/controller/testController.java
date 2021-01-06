@@ -9,12 +9,19 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/question/basket")
+@RequestMapping("/basicC")
 public class testController {
 
 
     @GetMapping(value = "/test")
     public String test() {
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         return "123";
     }
 
