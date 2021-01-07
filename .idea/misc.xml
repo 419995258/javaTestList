@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/hystrix/pom.xml" />
         <option value="$PROJECT_DIR$/basis/pom.xml" />
+        <option value="$PROJECT_DIR$/sentinel/pom.xml" />
       </list>
     </option>
   </component>
