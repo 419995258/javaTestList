@@ -33,4 +33,9 @@ public class testController {
         return testService.test(id);
     }
 
+    @GetMapping(value = "/testFeign")
+    public String testFeign() {
+       return hystrixFeign.test();
+    }
+
 }

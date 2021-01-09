@@ -17,12 +17,13 @@ public class testController {
     public String test() {
 
         try {
-            Thread.sleep(2000);
+            System.out.println("basic：test");
+             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        return "123";
+        return "basic：test";
     }
 
 }
