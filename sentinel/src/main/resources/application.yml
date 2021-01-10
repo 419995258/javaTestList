@@ -5,9 +5,9 @@ spring:
   application:
     name: cloud-sentinel-service
   cloud:
-#    nacos:
-#      discovery:
-#        server-addr: localhost:8848 # Nacos服务注册中心地址
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # Nacos服务注册中心地址
     sentinel:
       transport:
         dashboard: localhost:8080 # 配置Sentinel dashboard地址
@@ -31,3 +31,36 @@ management:
 feign:
   sentinel:
     enabled: true # 激活Sentinel对Feign的支持
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true # 使用okhttp
+
+okhttp:
+  pool:
+    maxIdleConnections: 200 #连接池最大空闲连接数
+    keepAliveDuration: 300 #连接池中空闲连接的保活时间，单位是秒
+  retryOnConnectionFailure: true #是否在失败时重试
+  connectTimeout: 5000 #连接超时时间，单位是毫秒
+  readTimeout: 3000 #读取超时时间，单位是毫秒
+
+
+#    配置ribbon
+cloud-basic-service:
+  ribbon:
+    #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #配置规则 随机
+    #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule #配置规则 轮询
+    #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RetryRule #配置规则 重试
+    #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule #配置规则 响应时间权重
+    #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.BestAvailableRule #配置规则 最空闲连接策略
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #配置规则 最空闲连接策略
+    ConnectTimeout: 500 #请求连接超时时间
+    ReadTimeout: 1000 #请求处理的超时时间
+    OkToRetryOnAllOperations: true #对所有请求都进行重试
+    MaxAutoRetriesNextServer: 2 #切换实例的重试次数
+
+
+logging:
+  level:
+    root: info
+
