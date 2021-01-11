@@ -1,6 +1,8 @@
 package leecode.norm;
 
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * 累加数是一个字符串，组成它的数字可以形成累加序列。
  *
@@ -39,9 +41,22 @@ public class 累加数306xdf {
     }
 
     public static boolean isAdditiveNumber(String num) {
+        // 1.临界值判断
+        if(StringUtils.isBlank(num)){
+            return false;
+        }
+        if(num.length() <= 3){
+            return false;
+        }
         char[] ch = num.toCharArray();
-        int nowValue = 0;
+
+
+        long nowValue = 0;
+        int nowValueLen = 0;
         for (int i = 0,len=ch.length; i < len; i++) {
+            if(ch[0]=='0' && i == 0){
+                return false;
+            }
 
         }
 
