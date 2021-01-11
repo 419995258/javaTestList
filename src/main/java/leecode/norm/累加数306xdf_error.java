@@ -33,7 +33,7 @@ import org.apache.commons.lang3.StringUtils;
  * https://leetcode-cn.com/problems/additive-number/solution/hui-su-bao-li-qiu-jie-by-haha123-3/
  * https://leetcode-cn.com/problems/additive-number/solution/bu-yong-di-gui-zhi-jie-zhao-by-ljjack/
  */
-public class 累加数306xdf {
+public class 累加数306xdf_error {
 
 
     public static void main(String[] args) {
@@ -50,14 +50,21 @@ public class 累加数306xdf {
             return false;
         }
         char[] ch = num.toCharArray();
+        // 初始值为0直接false
+        if(ch[0]=='0'){
+            return false;
+        }
 
 
         long nowValue = 0;
-        int nowValueLen = 0;
-        for (int i = 0,len=ch.length; i < len; i++) {
-            if(ch[0]=='0' && i == 0){
-                return false;
+        long sumValue = 0;
+        int nowIndex = 0;
+        for (int i = nowIndex,len=ch.length; i < len; i++) {
+            for (int j = i +1 ; j < len; j++) {
+                //
+
             }
+
 
         }
 
