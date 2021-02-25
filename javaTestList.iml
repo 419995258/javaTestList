@@ -10,24 +10,7 @@
             <entry key="com.zeroturnaround.jrebel.remoting.ModuleRemoteServerSelection" value="off" />
             <entry key="com.zeroturnaround.jrebel.remoting.ModuleSpecificSingleRemoteServer" />
             <entry key="jrebelEnabled" value="true" />
-            <entry key="savedRebelXmlBuildTool" />
-            <entry key="savedRebelXmlContent" />
-          </map>
-        </option>
-      </configuration>
-    </facet>
-  </component>
-  <component name="FacetManager">
-    <facet type="JRebel" name="JRebel">
-      <configuration>
-        <option name="ideModuleStorage">
-          <map>
-            <entry key="com.zeroturnaround.jrebel.FormatVersion" value="7.0.0" />
-            <entry key="com.zeroturnaround.jrebel.remoting.DeleteUnindexedFiles" value="false" />
-            <entry key="com.zeroturnaround.jrebel.remoting.ModuleRemoteServerSelection" value="off" />
-            <entry key="com.zeroturnaround.jrebel.remoting.ModuleSpecificSingleRemoteServer" />
-            <entry key="jrebelEnabled" value="true" />
-            <entry key="lastExternalPluginCheckTime" value="1608215330394" />
+            <entry key="lastExternalPluginCheckTime" value="1614237135734" />
             <entry key="savedRebelXmlBuildTool" />
             <entry key="savedRebelXmlContent" />
           </map>

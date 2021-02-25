@@ -1,0 +1,69 @@
+# 端口配置
+server:
+  port: 8085
+
+spring:
+  application:
+    name: cloud-xcloud-service
+
+
+#feign:
+#  client:
+#    config:
+#      default: #默认请求超时配置，注意需要connect-timeout和read-timeout一起配置才起效
+#        connect-timeout: 2000 #连接超时 mils
+#        read-timeout: 2000 #读数据超时 mils
+#      test-service: #指定feignclient的超时配置
+#        connect-timeout: 1000 #连接超时 millis
+#        read-timeout: 1000 #读数据超时 millis
+#        logger-level: HEADERS #指定feignclient的Logger.Level配置
+#        retryer: cn.xdf.xcloud.openfeign.example.retryer.OpenfeignSampleServiceRetryer #指定feinclient的retryer
+#  xcloud-hc: #open-feign的httpclient连接池配置，可以不配置，使用默认值
+#    maxTotal: 200 #最大连接数，默认为200
+#    defaultMaxPerRoute: 50 #最大每路由连接数，默认50
+#    connectReqTimeout: 500 #从连接池获取连接的超时时间，默认500 millis
+
+#要输出某个feignclient的openfeign日志，配置为debug，否则不输出
+logging:
+  level:
+    cn.xdf.xcloud.openfeign.example.service.XcloudTestFeignService: debug
+    cn.xdf.xcloud.openfeign.example.service.XcloudPromotionFeignService: debug
+
+
+xcloud:
+  sentinel:
+    # 所有在`urlBlockHandlers`中没有找到的Controller的默认资源规则的处理
+    defaultUrlBlockHandler:
+      httpStatus: 429
+      responseBody: "block by xcloud-sentinel"
+    # 定义Controller中具体资源的特定返回
+    urlBlockHandlers:
+      - resource: "/sentinelC/test"
+        httpStatus: 429
+        responseBody: "block by customized!!!"
+
+    # 定义规则 限流
+    flowRules:
+      - resource: "/sentinelC/test"
+        enable: true
+        grade: 1
+        count: 1
+        controlBehavior: 0
+      - resource: "/sentinelC/test2"
+        enable: true
+        grade: 1
+        count: 1
+        controlBehavior: 0
+
+
+    degradeRules:
+      - resource: "/sentinelC/test"
+        enable: true
+        count: 2
+        grade: 2
+        timeWindow: 10
+      - resource: "/sentinelC/test2"
+        enable: true
+        count: 10
+        grade: 1
+        timeWindow: 20
