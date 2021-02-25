@@ -40,17 +40,24 @@
             <version>2.1.0.RELEASE</version>
         </dependency>
         <!--SpringCloud ailibaba sentinel-datasource-nacos 后续做持久化用到-->
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-nacos</artifactId>
             <version>1.6.3</version>
-        </dependency>
+        </dependency>-->
         <!--SpringCloud ailibaba sentinel -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
             <version>2.1.0.RELEASE</version>
         </dependency>
+
+       <!-- <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-parameter-flow-control</artifactId>
+            <version>1.8.0</version>
+        </dependency>-->
+
         <!--openfeign-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

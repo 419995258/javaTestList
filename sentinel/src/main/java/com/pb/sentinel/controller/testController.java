@@ -1,6 +1,8 @@
 package com.pb.sentinel.controller;
 
 
+import com.alibaba.csp.sentinel.Entry;
+import com.alibaba.csp.sentinel.SphU;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.pb.sentinel.feign.SentinelFeign;
@@ -39,7 +41,7 @@ public class testController {
 
     //本例是blockHandler
     public String blockHandler(@RequestParam("id") String id,BlockException blockException) {
-        return "blockHandler：" + blockException.getMessage();
+        return "blockHandler：" + blockException.toString();
     }
 
 
@@ -47,6 +49,26 @@ public class testController {
     @GetMapping(value = "/testFeign")
     public String testFeign() {
         return sentinelFeign.test();
+    }
+
+
+    /**
+     * 根据不同的类型走不同的qps
+     * @return
+     */
+    @GetMapping(value = "/test2")
+    @SentinelResource(value = "test2",blockHandler = "blockHandler2")
+    public String test2(@RequestParam(value = "p1", required = false) String p1,
+                        @RequestParam(value = "p2", required = false) String p2) {
+        System.out.println(p1);
+        return "123";
+    }
+
+    //本例是blockHandler
+    public String blockHandler2(@RequestParam(value = "p1", required = false) String p1,
+                                @RequestParam(value = "p2", required = false) String p2,
+                                BlockException blockException) {
+        return "blockHandler：" + blockException.toString();
     }
 
 }
