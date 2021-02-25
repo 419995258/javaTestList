@@ -31,7 +31,6 @@ import org.apache.commons.lang3.StringUtils;
  *
  * https://leetcode-cn.com/problems/additive-number/solution/java-hui-su-by-jio-deng/
  * https://leetcode-cn.com/problems/additive-number/solution/hui-su-bao-li-qiu-jie-by-haha123-3/
- * https://leetcode-cn.com/problems/additive-number/solution/bu-yong-di-gui-zhi-jie-zhao-by-ljjack/
  */
 public class 累加数306xdf {
 
